@@ -6,7 +6,7 @@ using UserParserAPI.Models;
 
 namespace UserParserAPI.Interfaces
 {
-    public interface IJSONReader
+    public interface IReader
     {
         public Dictionary<string, User> returnDictionary(string file);
     }

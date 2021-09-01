@@ -9,7 +9,7 @@ namespace UserParserAPI.Services
 {
     public class UserService
     {
-        private IJSONReader reader = new ReaderService();
+        private IReader reader = new ReaderService();
         private IOutput _output = new OutputFileService();
 
         public List<User> returnUsers(string jsonFile) {

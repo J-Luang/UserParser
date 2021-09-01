@@ -10,7 +10,7 @@ using UserParserAPI.Models;
 
 namespace UserParserAPI.Services
 {
-    public class ReaderService : IJSONReader
+    public class ReaderService : IReader
     {
         public Dictionary<string, User> returnDictionary(string jsonFile)
         {
@@ -21,7 +21,8 @@ namespace UserParserAPI.Services
                 var json = new WebClient().DownloadString(jsonFile);
                 List<User> users = JsonConvert.DeserializeObject<List<User>>(json);
 
-                foreach (var item in users) {
+                foreach (var item in users)
+                {
                     dictUsers.Add(item.UserPrincipalName, item);
                 }
             }
